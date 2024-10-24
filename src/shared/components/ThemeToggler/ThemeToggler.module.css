@@ -1,0 +1,23 @@
+.themeToggler {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.themeSVG {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.themeSVG:hover {
+    transform: scale(1.1);
+}
+
+.sun {
+    opacity: 1;
+}
+
+.moon {
+    opacity: 0;
+}

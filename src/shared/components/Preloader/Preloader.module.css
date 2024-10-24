@@ -1,0 +1,19 @@
+.preloadContainer {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.preload {
+  animation: preloader 1.5s infinite;
+}
+
+@keyframes preloader {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

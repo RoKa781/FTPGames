@@ -7,15 +7,18 @@
   --font-family-text: "Iceland", sans-serif;
   --accent-bg-color: #0A1A33;
   --accent-text-color: #66CC99;
+  --accent-boxshadow-color: white;
 }
 
 .light-theme {
   --accent-bg-color: #E0F7FF;
   --accent-text-color: #FF9900;
+  --accent-boxshadow-color: black;
 }
 
 body {
   background-color: var(--accent-bg-color);
   color: var(--accent-text-color);
   transition: background-color 0.5s ease, color 0.5s ease;
+  margin: 0;
 }

@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--accent-text-color);
+  box-shadow: inset 0 0 20px 0px var(--accent-boxshadow-color);
+}
+
+.title {
+  font-family: var(--font-family-title);
+  font-size: clamp(3.125rem, 2.1154rem + 4.4872vw, 7.5rem);
+  font-weight: 700;
+  margin: 0;
+}
