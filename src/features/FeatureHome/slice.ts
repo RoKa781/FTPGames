@@ -1,13 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { EStatus, IGame, TStatus } from "../../shared/types/types";
+import { EStatus, IGame } from "../../shared/types/types";
 import { fetchGames } from "../../shared/api/api";
-import { RootState } from "../../app/store";
-
-interface IHomeState {
-  games: IGame[];
-  isLoading: TStatus;
-  error: string | null;
-}
+import { RootState } from "../../app/store/store";
+import { IHomeState } from "./utils/types";
 
 const initialState: IHomeState = {
   games: [],

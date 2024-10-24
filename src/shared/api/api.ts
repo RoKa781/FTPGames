@@ -21,3 +21,7 @@ apiClient.interceptors.response.use(
 export const fetchGames = async (): Promise<IGame[]> => {
   return await apiClient.get('/games');
 };
+
+export const fetchGame = async (id: string): Promise<IGame> => {
+  return await apiClient.get(`/game?id=${id}`)
+}

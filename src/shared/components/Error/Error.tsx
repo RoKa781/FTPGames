@@ -2,7 +2,7 @@ import { BiError } from "react-icons/bi";
 import st from './Error.module.css';
 
 interface IErrorProps {
-    error: string;
+    error: string | null;
 }
 
 const Error:React.FC<IErrorProps> = ({error}) => {

@@ -1,0 +1,4 @@
+.gamesSection {
+    display: flex;
+    flex-direction: row;
+}

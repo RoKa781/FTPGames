@@ -1,0 +1,126 @@
+.gamePage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  font-family: var(--font-family-text);
+}
+
+.infoSection {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+}
+
+.infoSection p {
+  font-size: 22px;
+  line-height: 110%;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-family: var(--font-family-title);
+  margin: 0;
+  font-size: clamp(1.5rem, 0.8rem + 3.5vw, 5rem);
+}
+
+.status {
+  font-size: 16px;
+  font-weight: bold;
+  color: #6c757d;
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+}
+
+.playLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0;
+  transition: background-color 0.5s ease;
+}
+
+.playLink:hover {
+  background-color: rgba(149, 118, 134, 0.6);
+}
+
+.details {
+  margin: 0;
+}
+
+.details h3 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.details p {
+  margin: 0;
+}
+
+.systemRequirements {
+  margin: 0;
+}
+
+.systemRequirements h3 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.systemRequirements p {
+  margin: 0;
+}
+
+.imageSection {
+  width: 36%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin: 0;
+}
+
+.screenshots {
+  width: 100%;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.screenshot {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .gamePage {
+    flex-direction: column;
+  }
+
+  .infoSection,
+  .imageSection {
+    width: 100%;
+  }
+
+  .thumbnail {
+    max-height: 300px;
+  }
+}

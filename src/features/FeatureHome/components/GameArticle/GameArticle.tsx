@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IGame } from "../../../../shared/types/types";
 import st from "./GameArticle.module.css";
 
@@ -6,7 +7,7 @@ interface GameArticleProps {
 }
 
 const GameArticle: React.FC<GameArticleProps> = ({ game }) => {
-  const { id, title, release_date, publisher, thumbnail, genre } = game;
+  const { id, title, release_date, publisher, thumbnail, genre, short_description } = game;
 
   return (
     <li className={st.gameItem}>
@@ -17,14 +18,10 @@ const GameArticle: React.FC<GameArticleProps> = ({ game }) => {
           <p><strong>Publisher:</strong> {publisher}</p>
           <p><strong>Release:</strong> {release_date}</p>
           <p><strong>Genre:</strong> {genre}</p>
-          <a
-            href={`https://freetogame.com/game/${id}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={st.playButton}
-          >
-            Play
-          </a>
+          <p>{short_description}</p>
+          <Link to={`/game/${id}`} className={st.playButton}>
+            More Info
+          </Link>
         </div>
       </article>
     </li>
