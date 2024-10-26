@@ -1,0 +1,46 @@
+.gamesSection {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.gamesSectionTitle {
+    display: inline-block;
+    margin: 0;
+    font-family: var(--font-family-title);
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.link {
+    padding: 15px 25px;
+    background-color: #007bff;
+    color: white;
+    font-family: var(--font-family-text);
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0;
+    margin-right: 20px;
+    align-self: flex-end;
+    transition: background-color 0.5s ease;
+}
+
+.link:hover {
+    background-color: rgba(149, 118, 134, 0.6);
+}
+
+.gamesSectionList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+}

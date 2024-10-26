@@ -3,20 +3,19 @@ import Error from "../../../shared/components/Error/Error";
 import GamesList from "../components/GamesList/GamesList";
 import SideBar from "../components/SideBar/SideBar";
 import { selectError } from "../slice";
-import st from "./HomePage.module.css";
+import st from './GamesPage.module.css'
 
-const HomePage = () => {
+const GamesPage = () => {
   const error = useSelector(selectError);
 
   return (
     <main className={st.main}>
       <section className={st.gamesSection}>
-        {error && <Error error={error} />}
-        <GamesList />
-        <SideBar onFilterChange={() => {}}/>
+        {error ? <Error error={error} /> : <GamesList />}
+        <SideBar />
       </section>
     </main>
   );
 };
 
-export default HomePage;
+export default GamesPage;

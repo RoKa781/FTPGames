@@ -20,13 +20,13 @@ const ThemeToggler = () => {
 
   return (
     <div className={st.themeToggler} onClick={toggleTheme}>
-      <PiSunHorizonFill
-        size={40}
-        className={`${st.themeSVG} ${isLight ? st.sun : st.moon}`}
-      />
       <BsFillMoonStarsFill
         size={30}
         className={`${st.themeSVG} ${isLight ? st.moon : st.sun}`}
+      />
+      <PiSunHorizonFill
+        size={40}
+        className={`${st.themeSVG} ${isLight ? st.sun : st.moon}`}
       />
     </div>
   );

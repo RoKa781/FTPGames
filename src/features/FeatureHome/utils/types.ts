@@ -9,12 +9,23 @@ export interface Filters {
   sortBy: string;
 }
 
-export interface SideBarProps {
-  onFilterChange: (filters: Filters) => void;
-}
+
+export type Platform = 'all' | 'browser' | 'pc' | '';
+export type SortBy = 'release-date' | 'alphabetical' | 'relevance' | '';
 
 export interface IHomeState {
   games: IGame[];
   isLoading: TStatus;
   error: string | null;
+  searchQuery: {
+    platform: Platform;
+    tags: Tag | Tag[];
+    sortBy: SortBy;
+  }
+}
+
+export interface IFilterQuery {
+  platform: Platform;
+  tags: Tag | Tag[];
+  sortBy: SortBy;
 }

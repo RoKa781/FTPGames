@@ -1,5 +1,6 @@
 import axios from "axios";
 import { IGame } from "../types/types";
+import { IFilterQuery } from "../../features/FeatureHome/utils/types";
 
 const apiClient = axios.create({
   baseURL: 'https://free-to-play-games-database.p.rapidapi.com/api',
@@ -25,3 +26,33 @@ export const fetchGames = async (): Promise<IGame[]> => {
 export const fetchGame = async (id: string): Promise<IGame> => {
   return await apiClient.get(`/game?id=${id}`)
 }
+
+export const fetchFilterGames = async (filters?: IFilterQuery): Promise<IGame[]> => {
+  const params = new URLSearchParams();
+
+  if (filters?.platform && filters.platform !== 'all') {
+    params.append('platform', filters.platform);
+  }
+
+  if (filters?.tags) {
+    if (typeof filters.tags === 'string') {
+      params.append('category', filters.tags);
+    } else if (Array.isArray(filters.tags)) {
+      if (filters.tags.length === 1) {
+        params.append('category', filters.tags.join(','));
+      } else if (filters.tags.length > 1) {
+        params.append('tag', filters.tags.join('.'));
+      }
+    }
+  }
+
+  if (filters?.sortBy) {
+    params.append('sort-by', filters.sortBy);
+  }
+
+  if (filters?.tags && Array.isArray(filters.tags) && filters.tags.length > 1) {
+    return await apiClient.get(`/filter?${params.toString()}`);
+  } else {
+    return await apiClient.get(`/games?${params.toString()}`);
+  }
+};

@@ -1,10 +1,12 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { homeSlice } from "../../features/FeatureHome/slice";
+import { filterSlice } from "../../features/FeatureHome/slice";
 import { gameSlice } from "../../features/FeatureGame/slice";
+import { mainSlice } from "../../features/FeatureMain/slice";
 
 const rootReducer = combineReducers({
-    [homeSlice.name]: homeSlice.reducer,
+    [filterSlice.name]: filterSlice.reducer,
     [gameSlice.name]: gameSlice.reducer,
+    [mainSlice.name]: mainSlice.reducer,
 });
 
 export default rootReducer;
