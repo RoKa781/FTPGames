@@ -37,3 +37,7 @@ export enum EStatus {
   SUCCEEDED = "succeeded",
   FAILED = "failed",
 }
+
+export interface LikeButtonProps {
+  id: string;
+}

@@ -1,0 +1,21 @@
+.likeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    padding: 10px 10px;
+  }
+  
+  .like {
+    cursor: pointer;
+    transition: transform 0.5s ease, fill 1s ease;
+  }
+  
+  .liked {
+    fill: red;
+  }
+  
+  .like:hover {
+    transform: scale(1.2);
+  }

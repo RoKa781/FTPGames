@@ -4,6 +4,7 @@ import GamesPage from "../features/FeatureHome/pages/GamesPage";
 import GamePage from "../features/FeatureGame/pages/GamePage";
 import NotFound from "../shared/pages/NotFound/NotFound";
 import MainPage from "../features/FeatureMain/pages/MainPage";
+import FavoritePage from "../features/FeatureFavorite/pages/FavoritePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/games" element={<GamesPage />} />
         <Route path="/game/:id" element={<GamePage />} />
+        <Route path="/favorite" element={<FavoritePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

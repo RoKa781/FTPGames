@@ -1,0 +1,6 @@
+.mainTitle {
+    font-family: var(--font-family-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 40px;
+}

@@ -1,6 +1,7 @@
 .asideBar {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   gap: 20px;
   width: 20%;
   margin-top: 20px;

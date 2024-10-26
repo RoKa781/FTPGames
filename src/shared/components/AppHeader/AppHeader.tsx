@@ -13,6 +13,9 @@ const AppHeader = () => {
         <NavLink to="/games" className={({ isActive }) => (isActive ? `${st.link} ${st.active}` : st.link)}>
           Find Game
         </NavLink>
+        <NavLink to="/favorite" className={({ isActive }) => (isActive ? `${st.link} ${st.active}` : st.link)}>
+          Your Favorite
+        </NavLink>
       </nav>
       <ThemeToggler />
     </header>
