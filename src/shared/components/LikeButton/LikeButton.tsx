@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import st from './LikeButton.module.css';
 import { LikeButtonProps } from "../../types/types";
 
-const LikeButton:React.FC<LikeButtonProps> = ({ id }) => {
+const LikeButton: React.FC<LikeButtonProps> = ({ id }) => {
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const LikeButton:React.FC<LikeButtonProps> = ({ id }) => {
     const savedLikes = JSON.parse(localStorage.getItem('likedItems') || '[]');
 
     if (liked) {
-      const updatedLikes = savedLikes.filter((itemId:string) => itemId !== id);
+      const updatedLikes = savedLikes.filter((itemId: string) => itemId !== id);
       localStorage.setItem('likedItems', JSON.stringify(updatedLikes));
     } else {
       savedLikes.push(id);
@@ -36,3 +36,4 @@ const LikeButton:React.FC<LikeButtonProps> = ({ id }) => {
 }
 
 export default LikeButton;
+

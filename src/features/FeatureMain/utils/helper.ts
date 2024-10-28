@@ -1,6 +1,27 @@
 import { IGame } from "../../../shared/types/types";
 
-export const sectionsList = ["New", "Shooter", "mmoRPG", "Moba", "Strategy"];
+export const sectionsList = [
+  {
+    name: 'New',
+    link: '/games?platform=all&sortBy=release-date'
+  },
+  {
+    name: 'Shooter',
+    link: '/games?platform=all&tags=shooter&sortBy=relevance'
+  },
+  {
+    name: 'mmoRPG',
+    link: '/games?platform=all&tags=mmorpg&sortBy=relevance'
+  },
+  {
+    name: 'Moba',
+    link: '/games?platform=all&tags=moba&sortBy=relevance'
+  },
+  {
+    name: 'Strategy',
+    link: '/games?platform=all&tags=strategy&sortBy=relevance'
+  }
+];
 
 export const filterSection = (label: string, arr: IGame[]) => {
   switch (label) {

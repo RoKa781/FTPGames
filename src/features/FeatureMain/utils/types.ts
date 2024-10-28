@@ -2,6 +2,7 @@ import { IGame, TStatus } from "../../../shared/types/types";
 
 export interface GamesListSectionProps {
   label: string;
+  link: string;
   data: IGame[];
 }
 

@@ -7,6 +7,7 @@
   --font-family-title: "Orbitron", sans-serif;
   --font-family-text: "Iceland", sans-serif;
   --accent-bg-color: #0A1A33;
+  --accent-formbg-color: #ffffff00;
   --accent-text-color: #66CC99;
   --accent-boxshadow-color: white;
   --active-link: #104b2d;
@@ -17,6 +18,7 @@
   --accent-text-color: #FF9900;
   --accent-boxshadow-color: black;
   --active-link: #885508;
+  --accent-formbg-color: #ffffff00;
 }
 
 body {

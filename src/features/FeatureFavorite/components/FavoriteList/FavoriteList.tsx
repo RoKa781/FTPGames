@@ -13,7 +13,6 @@ const FavoriteList = () => {
     dispatch(fetchFavoritesGamesThunk())
   }, [dispatch])
 
-
   return (
     <ul className={st.favoriteList}>
       {favorites.map((fav) => (

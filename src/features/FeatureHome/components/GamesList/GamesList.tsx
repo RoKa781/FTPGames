@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   fetchFilterGamesThunk,
   selectGames,
@@ -18,6 +18,13 @@ const GamesList = () => {
   const games = useSelector(selectGames);
   const isLoading = useSelector(selectIsLoading);
   const { platform, sortBy, tags } = useSelector(selectQuery);
+  const [page, setPage] = useState(1);
+  const gamesPerPage = 20;
+  const totalPages = Math.ceil(games.length / gamesPerPage);
+  const currentGames = games.slice(
+    (page - 1) * gamesPerPage,
+    page * gamesPerPage
+  );
 
   useEffect(() => {
     if (platform || sortBy || tags.length > 0) {
@@ -25,20 +32,55 @@ const GamesList = () => {
     }
   }, [dispatch, platform, sortBy, tags]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
+
   return (
-    <>
+    <div className={st.listContainer}>
       {(games as any).status_message ? (
         <Error error={(games as any).status_message} />
       ) : (
         <ul className={st.gamesList}>
           {!games.length && <h2>Начните искать</h2>}
           {isLoading === "loading" && <Preloader />}
-          {games.slice(0, 20).map((game: IGame) => (
+          {currentGames.map((game: IGame) => (
             <GameArticle key={game.id} game={game} />
           ))}
         </ul>
       )}
-    </>
+      <div className={st.pagination}>
+        <button
+          onClick={handlePrevPage}
+          disabled={page === 1}
+          className={st.paginationButton}
+        >
+          Back
+        </button>
+        <span>
+          Page {page} of {totalPages}
+        </span>
+        <button
+          onClick={handleNextPage}
+          disabled={page === totalPages}
+          className={st.paginationButton}
+        >
+          Next
+        </button>
+      </div>
+    </div>
   );
 };
 

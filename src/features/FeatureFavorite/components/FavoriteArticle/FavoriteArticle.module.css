@@ -1,0 +1,40 @@
+.gameItem {
+  list-style-type: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent-text-color);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.article {
+  position: relative;
+  display: flex;
+}
+
+.thumbnail {
+    object-fit: contain;
+    transition: transform 0.7s ease, box-shadow 0.5s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 20px 1px var(--accent-boxshadow-color);
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 5px;
+}
+
+.infoContainer p,
+h3 {
+  margin: 0;
+  padding: 0;
+  color: var(--accent-text-color);
+  font-family: var(--font-family-text);
+  font-size: 25px;
+}

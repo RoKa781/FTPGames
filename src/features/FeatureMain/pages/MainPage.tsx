@@ -38,9 +38,10 @@ const MainPage = () => {
       {loading === 'succeeded' && (
         sectionsList.map((section) => (
           <GamesListSection
-            key={section}
-            label={section}
-            data={filterSection(section, games)}
+            key={section.name}
+            label={section.name}
+            data={filterSection(section.name, games)}
+            link={section.link}
           />
         ))
       )}

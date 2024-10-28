@@ -18,13 +18,16 @@
 .article {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
   gap: 10px;
+  min-height: 250px;
 }
 
-.thumbnail {
-  width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .title {
@@ -35,4 +38,32 @@
 .description {
   margin: 0;
   font-family: var(--font-family-text);
+  font-size: 22px;
 }
+
+.article {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.3s ease;
+}
+
+.article:hover .background {
+  filter: brightness(0.3);
+}
+
+.infoContainer {
+  position: relative;
+  z-index: 2;
+}
+
