@@ -54,3 +54,34 @@
   background-color: var(--accent-boxshadow-color);
   font-weight: 700;
 }
+
+@media (max-width: 680px) {
+  .sectionAbout {
+    flex-direction: column;
+  }
+
+  .sectionAbout {
+    padding: 10px;
+  }
+
+  .sectionTextContainer {
+    width: 100%;
+  }
+
+  .mainPage {
+    padding: 0;
+  }
+
+  .sectionAboutTitle {
+    font-size: 45px;
+    width: 100%;
+  }
+
+  .sectionAboutText {
+    width: 100%;
+  }
+
+  .sectionAboutLink {
+    align-self: flex-start;
+  }
+}

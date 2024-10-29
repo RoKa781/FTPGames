@@ -38,3 +38,14 @@ h3 {
   font-family: var(--font-family-text);
   font-size: 25px;
 }
+
+@media (max-width: 585px) {
+  .article {
+    flex-direction: column;
+    padding-right: 10px;
+  }
+  
+  .thumbnail {
+    width: 100%;
+  }
+}

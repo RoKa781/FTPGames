@@ -49,3 +49,8 @@
 .dropdownMenu li:hover {
   background-color: #f0f0f0;
 }
+
+@media (max-width: 480px) {
+  .profile {
+  }
+}

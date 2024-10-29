@@ -1,21 +1,37 @@
 .likeButton {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: transparent;
-    border: none;
-    padding: 10px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  padding: 10px 10px;
+}
+
+.like {
+  cursor: pointer;
+  transition: transform 0.5s ease, fill 0.5s ease;
+}
+
+.liked {
+  fill: red;
+}
+
+.like:hover {
+  transform: scale(1.2);
+}
+
+.animate {
+  animation: dropDown 0.5s ease;
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(0) scale(1);
   }
-  
-  .like {
-    cursor: pointer;
-    transition: transform 0.5s ease, fill 1s ease;
+  50% {
+    transform: translateY(-5px) scale(1.2);
   }
-  
-  .liked {
-    fill: red;
+  100% {
+    transform: translateY(0) scale(1);
   }
-  
-  .like:hover {
-    transform: scale(1.2);
-  }
+}

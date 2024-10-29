@@ -1,25 +1,24 @@
 import st from "./ThemeToggler.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { PiSunHorizonFill } from "react-icons/pi";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "../../../app/store/store";
+import { selectIsLight, toggleTheme } from "../../../features/FeatureUser/slice";
 
 const ThemeToggler = () => {
-  const [isLight, setIsLight] = useState(false);
+  const dispatch = useDispatch();
+  const isLight = useSelector(selectIsLight);
 
-  const toggleTheme = () => {
-    setIsLight((prev) => !prev);
+  const handleToggle = () => {
+    dispatch(toggleTheme());
   };
 
   useEffect(() => {
-    if (isLight) {
-      document.body.classList.add("light-theme");
-    } else {
-      document.body.classList.remove("light-theme");
-    }
+    document.body.classList.toggle("light-theme", isLight);
   }, [isLight]);
 
   return (
-    <div className={st.themeToggler} onClick={toggleTheme}>
+    <div className={st.themeToggler} onClick={handleToggle}>
       <BsFillMoonStarsFill
         size={30}
         className={`${st.themeSVG} ${isLight ? st.moon : st.sun}`}

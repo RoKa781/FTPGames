@@ -13,6 +13,7 @@ import "swiper/swiper-bundle.css";
 import st from "./GamePage.module.css";
 import Preloader from "../../../shared/components/Preloader/Preloader";
 import Error from "../../../shared/components/Error/Error";
+import LikeButton from "../../../shared/components/LikeButton/LikeButton";
 
 const GamePage = () => {
   const { id } = useParams();
@@ -57,6 +58,7 @@ const GamePage = () => {
         </Swiper>
       </div>
       <div className={st.infoSection}>
+        <LikeButton id={String(id)} />
         <Link to={"/"} className={st.playLink}>
           Back to games list
         </Link>

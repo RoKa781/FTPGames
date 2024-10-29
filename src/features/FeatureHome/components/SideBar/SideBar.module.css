@@ -68,3 +68,45 @@
 .applyButton:hover {
   background-color: rgba(149, 118, 134, 0.6);
 }
+
+@media (max-width: 900px) {
+  .asideBar {
+    order: -1;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .filterSection label {
+    font-size: 25px;
+  }
+
+  .applyButton {
+    width: 20%;
+  }
+}
+
+@media (max-width: 700px) {
+  .asideBar {
+    flex-direction: column;
+  }
+
+  .tagsContainer {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(130px, 1fr) );
+  }
+
+  .filterSection {
+    width: 100%;
+  }
+
+  .filterSection label {
+    font-size: 29px;
+  }
+
+  .applyButton {
+    width: 100%;
+  }
+}

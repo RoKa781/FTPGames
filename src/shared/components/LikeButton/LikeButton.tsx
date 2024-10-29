@@ -5,6 +5,7 @@ import { LikeButtonProps } from "../../types/types";
 
 const LikeButton: React.FC<LikeButtonProps> = ({ id }) => {
   const [liked, setLiked] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const savedLikes = JSON.parse(localStorage.getItem('likedItems') || '[]');
@@ -23,17 +24,21 @@ const LikeButton: React.FC<LikeButtonProps> = ({ id }) => {
     }
 
     setLiked(!liked);
+    setAnimate(true);
+
+    setTimeout(() => setAnimate(false), 500);
   };
 
   return (
     <button className={st.likeButton} onClick={handleLike}>
       <MdFavorite
         size={25}
-        className={`${st.like} ${liked ? st.liked : ""}`}
+        className={`${st.like} ${liked ? st.liked : ""} ${animate ? st.animate : ""}`}
       />
     </button>
   );
 }
 
 export default LikeButton;
+
 
