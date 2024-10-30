@@ -53,15 +53,23 @@
   margin-right: 5px;
 }
 
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
 .applyButton {
   padding: 10px 20px;
   background-color: var(--accent-text-color);
-  color: white;
+  color: var(--filter-button);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
-  font-size: 16px;
+  font-size: 22px;
+  font-family: var(--font-family-text);
   transition: background-color 0.5s ease;
 }
 
@@ -83,9 +91,6 @@
     font-size: 25px;
   }
 
-  .applyButton {
-    width: 20%;
-  }
 }
 
 @media (max-width: 700px) {

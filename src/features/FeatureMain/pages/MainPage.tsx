@@ -6,6 +6,7 @@ import { fetchGamesMainThunk, selectGames, selectIsLoading } from "../slice";
 import { useEffect } from "react";
 import { filterSection, sectionsList } from "../utils/helper";
 import Preloader from "../../../shared/components/Preloader/Preloader";
+import { Helmet } from "react-helmet-async";
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,9 @@ const MainPage = () => {
 
   return (
     <main className={st.mainPage}>
+      <Helmet>
+        <title>FTPGames</title>
+      </Helmet>
       <section className={st.sectionAbout}>
         <div className={st.sectionTextContainer}>
           <h2 className={st.sectionAboutTitle}>Welcome to Our Game Library</h2>

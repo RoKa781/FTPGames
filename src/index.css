@@ -11,6 +11,7 @@
   --accent-text-color: #E0E0E0;
   --accent-boxshadow-color: rgba(255, 255, 255, 0.2);
   --active-link: #66CC99;
+  --filter-button: black;
 }
 
 .light-theme {
@@ -19,6 +20,7 @@
   --accent-boxshadow-color: rgba(0, 0, 0, 0.2);
   --active-link: #ff6f61;
   --accent-formbg-color: #fdfdfd;
+  --filter-button: #06e5be91;
 }
 
 body {

@@ -4,6 +4,7 @@ import { selectIsAuth } from '../../FeatureUser/slice';
 import FavoriteList from '../components/FavoriteList/FavoriteList';
 import st from './FavoritePage.module.css';
 import { selectFavorites } from '../slice';
+import { Helmet } from 'react-helmet-async';
 
 const FavoritePage = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -11,12 +12,15 @@ const FavoritePage = () => {
 
   return (
     <main className={st.main}>
+      <Helmet>
+        <title>FTPGames - Favorites</title>
+      </Helmet>
       {isAuth ? (
         <>
           {!favorites.length && (
             <h1 className={st.mainTitle}>
-              You haven't liked anything<br/> click on the like to add the game to
-              your favorites
+              You haven't liked anything
+              <br /> click on the like to add the game to your favorites
             </h1>
           )}
           {favorites.length > 1 && (

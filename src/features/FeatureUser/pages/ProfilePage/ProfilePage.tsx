@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from '../../../../app/store/store';
 import { getFavoriteFromStorage, selectFavoritesId, selectIsAuth, selectUser } from '../../slice';
 import st from './ProfilePage.module.css';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
@@ -16,6 +17,9 @@ const ProfilePage = () => {
 
   return (
     <main className={st.profile}>
+      <Helmet>
+        <title>FTPGames - Profile</title>
+      </Helmet>
       {isAuth ? (
         <>
           <h1 className={st.userTitle}>Username: {user}</h1>

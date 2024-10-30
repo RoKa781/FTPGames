@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../slice';
 import st from './LoginPage.module.css';
+import { Helmet } from 'react-helmet-async';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -17,6 +18,9 @@ const LoginPage = () => {
 
   return (
     <main className={st.container}>
+      <Helmet>
+        <title>FTPGames - Login</title>
+      </Helmet>
       <h1 className={st.title}>Enter nickname</h1>
       <form className={st.form} onSubmit={handleSubmit}>
         <div className={st.inputGroup}>

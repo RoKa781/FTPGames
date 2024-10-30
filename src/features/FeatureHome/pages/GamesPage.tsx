@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useSelector } from "../../../app/store/store";
 import Error from "../../../shared/components/Error/Error";
 import GamesList from "../components/GamesList/GamesList";
@@ -10,6 +11,9 @@ const GamesPage = () => {
 
   return (
     <main className={st.main}>
+      <Helmet>
+        <title>FTPGames - Find Game</title>
+      </Helmet>
       <section className={st.gamesSection}>
         {error ? <Error error={error} /> : <GamesList />}
         <SideBar />

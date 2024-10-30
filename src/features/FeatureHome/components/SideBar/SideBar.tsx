@@ -4,7 +4,7 @@ import { tagsList } from "../../utils/constants";
 import { Platform, SortBy, Tag } from "../../utils/types";
 import { fetchFilterGamesThunk, setFilter } from "../../slice";
 import { useDispatch } from "../../../../app/store/store";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const SideBar: React.FC = () => {
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ const SideBar: React.FC = () => {
   );
   const [sortBy, setSortBy] = useState<SortBy>("relevance");
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate()
 
   useEffect(() => {
     const platformParam = searchParams.get("platform") || "all";
@@ -59,6 +60,11 @@ const SideBar: React.FC = () => {
       fetchFilterGamesThunk({ platform, tags: selectedCategories, sortBy })
     );
   };
+
+  const handleLucky = () => {
+    const id = Math.floor(Math.random() * 590) + 1;
+    navigate(`/game/${id}`)
+  }
 
   return (
     <aside className={st.asideBar}>
@@ -118,10 +124,14 @@ const SideBar: React.FC = () => {
           </div>
         ))}
       </div>
-
-      <button className={st.applyButton} onClick={handleFilterChange}>
-        Apply Filters
-      </button>
+      <div className={st.buttonsContainer}>
+        <button className={st.applyButton} onClick={handleFilterChange}>
+          Apply Filters
+        </button>
+        <button className={st.applyButton} onClick={handleLucky}>
+          I am lucky
+        </button>
+      </div>
     </aside>
   );
 };
